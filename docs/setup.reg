@@ -1,6 +1,9 @@
 Windows Registry Editor Version 5.00
 
+; Syncoria Workspace for Claude Desktop - points Claude at the company configuration.
+; Per-user, no admin rights needed. Re-run any time; it replaces the old AWS Lambda URL.
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Claude]
-"bootstrapEnabled"="true"
+"bootstrapEnabled"=dword:00000001
 "bootstrapUrl"="https://syncoria.github.io/syncoria-skills/bootstrap.json"
-"disableDeploymentModeChooser"="true"
+"bootstrapHeaders"="{\"X-Syncoria-Client\":\"claude-desktop\"}"
+"disableDeploymentModeChooser"=dword:00000001
