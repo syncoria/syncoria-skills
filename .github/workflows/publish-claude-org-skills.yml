@@ -44,6 +44,13 @@ jobs:
             --content-type application/json \
             --cache-control no-store
 
+      - name: Publish IT deployment scripts to private S3
+        env:
+          BUCKET: syncoria-claude-plugin-publisher-bucket-fnlszlpsxhad
+        run: |
+          aws s3 cp deploy/install-org-skills.ps1 "s3://$BUCKET/releases/$GITHUB_SHA/install-org-skills.ps1" --content-type text/plain
+          aws s3 cp deploy/detect-org-skills.ps1 "s3://$BUCKET/releases/$GITHUB_SHA/detect-org-skills.ps1" --content-type text/plain
+
       - name: Keep release verification data in workflow artifacts
         uses: actions/upload-artifact@v4
         with:
