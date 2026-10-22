@@ -10,7 +10,7 @@ excluded={".git",".github",".claude-plugin","scripts","dist","node_modules"}
 skills=[p for p in sorted(root.iterdir()) if p.is_dir() and p.name not in excluded and (p/"SKILL.md").is_file()]
 if not skills: raise SystemExit("No skills with SKILL.md detected.")
 for skill in skills:
-    if not re.fullmatch(r"[a-z][a-z0-9-]*",skill.name): raise SystemExit("Bad skill name: "+skill.name)
+    if not re.fullmatch(r"[a-z][a-z0-9_-]*",skill.name): raise SystemExit("Bad skill name: "+skill.name)
 if dest.exists(): shutil.rmtree(dest)
 dest.mkdir()
 with tempfile.TemporaryDirectory() as tmp:
