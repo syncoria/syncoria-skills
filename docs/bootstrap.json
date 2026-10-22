@@ -1,0 +1,107 @@
+{
+  "inferenceProvider": "bedrock",
+  "inferenceBedrockRegion": "ca-central-1",
+  "inferenceModels": [
+    {
+      "name": "us.anthropic.claude-sonnet-5-5",
+      "labelOverride": "Claude Sonnet 5.5 ? Bedrock",
+      "anthropicFamilyTier": "sonnet",
+      "isFamilyDefault": true
+    },
+    {
+      "name": "us.anthropic.claude-opus-5-5",
+      "labelOverride": "Claude Opus 5.5 ? Bedrock",
+      "anthropicFamilyTier": "opus",
+      "isFamilyDefault": true
+    },
+    {
+      "name": "us.anthropic.claude-haiku-5-5",
+      "labelOverride": "Claude Haiku 5.5 ? Bedrock",
+      "anthropicFamilyTier": "haiku",
+      "isFamilyDefault": true
+    }
+  ],
+  "desktopHome": "standard",
+  "isClaudeCodeForDesktopEnabled": false,
+  "builtinBrowserEnabled": true,
+  "builtinBrowserDefaultDomainPolicy": "allow",
+  "mcpPersistentAlwaysAllowEnabled": false,
+  "isLocalDevMcpEnabled": false,
+  "managedMcpServers": [
+    {
+      "name": "Google Drive",
+      "transport": "http",
+      "url": "https://drivemcp.googleapis.com/mcp/v1",
+      "oauth": {},
+      "toolPolicy": {
+        "*": "ask"
+      }
+    },
+    {
+      "name": "Google Docs",
+      "transport": "http",
+      "url": "https://docsmcp.googleapis.com/mcp/v1",
+      "oauth": {},
+      "toolPolicy": {
+        "*": "ask"
+      }
+    },
+    {
+      "name": "Google Sheets",
+      "transport": "http",
+      "url": "https://sheetsmcp.googleapis.com/mcp/v1",
+      "oauth": {},
+      "toolPolicy": {
+        "*": "ask"
+      }
+    },
+    {
+      "name": "Google Slides",
+      "transport": "http",
+      "url": "https://slidesmcp.googleapis.com/mcp/v1",
+      "oauth": {},
+      "toolPolicy": {
+        "*": "ask"
+      }
+    }
+  ],
+  "allowedPluginMarketplaces": [
+    {
+      "source": "github",
+      "repo": "anthropics/claude-plugins-official",
+      "installationPreference": "available"
+    },
+    {
+      "source": "github",
+      "repo": "anthropics/knowledge-work-plugins",
+      "installationPreference": "available"
+    }
+  ],
+  "coworkEgressAllowedHosts": [
+    "*"
+  ],
+  "inferenceCredentialKind": "interactive",
+  "inferenceBedrockSsoStartUrl": "https://d-9d674bb3b9.awsapps.com/start",
+  "inferenceBedrockSsoRegion": "ca-central-1",
+  "inferenceBedrockSsoAccountId": "537124957474",
+  "inferenceBedrockSsoRoleName": "ClaudeCodeDeveloper",
+  "disableDeploymentModeChooser": true,
+  "sessionRetentionHold": true,
+  "claudeAiImport": {
+    "enabled": true,
+    "automatic3pImport": true,
+    "exportEnabled": true,
+    "bannerBehavior": "detect"
+  },
+  "toolSearchEnabled": true,
+  "disabledBuiltinTools": [],
+  "skillCreationEnabled": true,
+  "userPluginMarketplacesEnabled": true,
+  "userPluginUploadsEnabled": true,
+  "deploymentDisplayName": "Syncoria Workspace",
+  "deploymentDisplaySubtitle": "Business · AWS Bedrock",
+  "coworkTabEnabled": true,
+  "developerModeEnabled": false,
+  "disableBypassPermissionsMode": true,
+  "organizationInstructions": "You are the Syncoria Business Workspace assistant. Prioritize business documents, finance, operations, Odoo functional workflows, and Google Workspace collaboration. Do not assume you can access GitHub or developer tools. Use approved organization skills when installed. Never claim Google document changes were saved without connector confirmation."
+}
