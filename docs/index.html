@@ -1,28 +1,212 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Syncoria Claude · Business Workspace</title>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Syncoria Claude Setup</title>
+<meta name="description" content="Step-by-step setup for Claude Desktop in the Syncoria Workspace.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:dark;--bg:#0c1220;--card:#192438;--text:#f4f6fb;--muted:#acbacc;--border:#33425a;--accent:#e9af91;--good:#92e1bf}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% -18%,#2b3c59 0,transparent 60%),var(--bg);color:var(--text);font:15px/1.58 system-ui,"Segoe UI",sans-serif}a{color:#c3e5ff}header{border-bottom:1px solid var(--border);padding:17px max(18px,calc((100% - 1080px)/2));display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-weight:750;font-size:20px;letter-spacing:-.7px}.brand span{display:inline-grid;place-items:center;background:var(--accent);color:#251811;width:34px;height:34px;border-radius:10px;margin-right:9px}.pill{font-size:11px;color:var(--good);border:1px solid #326753;background:#1b362e;border-radius:20px;padding:5px 10px}main{max-width:1080px;margin:auto;padding:46px 20px 70px}.eyebrow{letter-spacing:1.6px;font-size:11px;color:var(--good);text-transform:uppercase;font-weight:800}h1{font-size:clamp(34px,5.5vw,56px);line-height:1.1;letter-spacing:-2px;max-width:780px;margin:12px 0 15px}.lead{max-width:730px;font-size:18px;color:var(--muted)}.grid{display:grid;grid-template-columns:1.3fr 1fr;gap:18px;margin-top:34px}.card{background:linear-gradient(160deg,#1b283b,#121b2b);border:1px solid var(--border);border-radius:16px;padding:24px}h2{font-size:21px;letter-spacing:-.45px;margin:4px 0 14px}h3{font-size:15px;margin:0 0 6px}.step{display:flex;gap:14px;margin:24px 0}.number{width:30px;height:30px;flex:0 0 30px;border-radius:10px;background:#304257;color:#f6c5a9;font-weight:800;display:grid;place-items:center}.step p{color:var(--muted);font-size:13px;margin:0 0 11px}.btn{display:inline-block;background:var(--accent);border:1px solid var(--accent);color:#251a14;font-weight:750;font-size:13px;text-decoration:none;border-radius:10px;padding:11px 15px}.btn.alt{background:#21354e;border-color:#4d6280;color:#f1f5fc}.list{list-style:none;padding:0;margin:9px 0}.list li{border-bottom:1px solid var(--border);padding:11px 0;font-size:13px}.note{border-left:3px solid var(--good);background:#203b33;padding:12px 14px;border-radius:0 9px 9px 0;font-size:13px;color:#def2e8;margin-top:12px}.small{font-size:12px;color:var(--muted)}details{border:1px solid var(--border);background:#151f2f;border-radius:12px;padding:16px 20px;margin-top:27px}summary{cursor:pointer;font-weight:700}footer{border-top:1px solid var(--border);margin-top:40px;padding-top:20px;font-size:12px;color:#9ba8b8}@media(max-width:760px){.grid{grid-template-columns:1fr}main{padding:30px 18px}h1{letter-spacing:-1px}.card{padding:18px}}</style></head>
-<body><header><div class="brand"><span>S</span>Syncoria / Claude</div><div class="pill">Business · AWS Bedrock</div></header><main>
-<div class="eyebrow">Company workspace / Windows</div><h1>Open Claude. Sign in. Get to work.</h1><p class="lead">Simple onboarding for Syncoria employees. No developer environment, terminal, or Git command required.</p>
-<div class="grid"><div class="card">
-<div class="eyebrow">Employee onboarding</div><h2>Four simple steps</h2>
-<div class="step"><div class="number">1</div><div><h3>Install Claude Desktop</h3><p>If you have Claude Desktop already, go directly to Step 2.</p><a class="btn alt" href="https://claude.com/download" rel="noopener" target="_blank">Download Claude ↗</a></div></div>
-<div class="step"><div class="number">2</div><div><h3>Apply Syncoria settings</h3><p>Download the company configuration. Double-click the <strong>.reg</strong> file and approve the Windows prompt. This switches your computer from the old Lambda configuration to GitHub Pages.</p><a class="btn" href="./setup.reg" download="syncoria-claude-bootstrap.reg">Download company settings ↓</a></div></div>
-<div class="step"><div class="number">3</div><div><h3>Restart Claude, then sign in with AWS</h3><p>Quit Claude completely (including the system tray) and reopen it. Select <strong>Sign in with AWS</strong> using your company account.</p></div></div>
-<div class="step"><div class="number">4</div><div><h3>Connect your Google Workspace account</h3><p>When requested, authorize Google Drive, Docs, Sheets and Slides with <strong>your own</strong> work identity. File access is never shared automatically with colleagues.</p></div></div>
-<div class="note">All future configuration updates will be published through GitHub and pulled through your existing Windows policy URL. You do not have to reinstall the policy after every settings change.</div>
-</div><aside class="card"><div class="eyebrow">Configured capabilities</div><h2>Your business workspace</h2>
-<ul class="list">
-<li>✓ Claude Chat and Cowork through AWS Bedrock</li>
-<li>✓ Google Drive, Docs, Sheets and Slides definitions</li>
-<li>✓ Company AWS Identity Center sign-in</li>
-<li>✓ Session retention until manual deletion</li>
-<li>✓ Tool search and Claude.ai import options</li>
-<li>✓ Business profile without developer tooling</li>
-<li>✓ Plugins available through approved marketplaces</li>
+:root{--navy:#003056;--teal:#00B4C5;--clay:#C97B63;--ink:#1A1C22;--bg:#F9FAFB;--card:#fff;--muted:#5b6472;--line:#e3e7ec;--soft:#eef6f8;--done:#0a8a5f}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#eef1f5;--bg:#10151d;--card:#18202b;--muted:#a3adba;--line:#2a3442;--soft:#13242c;--navy:#7fb8e6;--done:#4cc79a}}
+:root[data-theme="dark"]{--ink:#eef1f5;--bg:#10151d;--card:#18202b;--muted:#a3adba;--line:#2a3442;--soft:#13242c;--navy:#7fb8e6;--done:#4cc79a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 Montserrat,system-ui,"Segoe UI",sans-serif}
+a{color:var(--navy)}
+header{background:#003056;color:#fff;padding:14px 16px}
+.wrap{max-width:900px;margin:0 auto;padding:0 16px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:900px;margin:0 auto}
+.logo{font-weight:700;letter-spacing:-.3px}.logo b{color:var(--teal)}
+.os{display:flex;gap:4px;background:rgba(255,255,255,.12);padding:3px;border-radius:9px}
+.os button{border:0;background:transparent;color:#fff;font:600 13px Montserrat,sans-serif;padding:6px 12px;border-radius:7px;cursor:pointer}
+.os button[aria-pressed="true"]{background:#fff;color:#003056}
+.hero{padding:34px 0 8px}
+h1{font-size:clamp(26px,5vw,38px);line-height:1.15;letter-spacing:-.8px;margin:0 0 10px}
+.lead{color:var(--muted);max-width:660px;margin:0}
+.progress{margin:22px 0 6px;display:flex;align-items:center;gap:12px;font-size:13px;color:var(--muted)}
+.bar{flex:1;height:8px;background:var(--line);border-radius:6px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:var(--teal);transition:width .3s}
+h2{font-size:13px;text-transform:uppercase;letter-spacing:1.4px;color:var(--clay);margin:34px 0 10px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin:10px 0;display:grid;grid-template-columns:34px 1fr;gap:14px}
+.step.done{border-color:var(--done)}
+.check{width:30px;height:30px;border-radius:50%;border:2px solid var(--line);background:transparent;cursor:pointer;display:grid;place-items:center;font:700 14px Montserrat,sans-serif;color:var(--muted);padding:0}
+.step.done .check{background:var(--done);border-color:var(--done);color:#fff}
+.step h3{margin:2px 0 6px;font-size:17px;letter-spacing:-.2px}
+.step p,.step li{color:var(--muted);margin:0 0 8px}
+.step ol,.step ul{padding-left:20px;margin:4px 0 10px}
+.btn{display:inline-flex;align-items:center;gap:6px;background:#003056;color:#fff;text-decoration:none;font-weight:600;font-size:14px;border-radius:9px;padding:10px 16px;margin:4px 6px 4px 0;border:0;cursor:pointer;font-family:inherit}
+.btn.teal{background:var(--teal);color:#062a30}.btn.ghost{background:transparent;color:var(--navy);border:1px solid var(--line)}
+kbd,.path{font:600 12.5px ui-monospace,Consolas,monospace;background:var(--soft);color:var(--ink);padding:2px 7px;border-radius:6px;white-space:nowrap}
+.tip{background:var(--soft);border-left:3px solid var(--teal);border-radius:0 9px 9px 0;padding:10px 12px;font-size:13.5px;color:var(--ink);margin:8px 0}
+.warn{border-left-color:var(--clay)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin:10px 0}
+.conn{border:1px solid var(--line);border-radius:11px;padding:12px;background:var(--card)}
+.conn b{display:block;font-size:14px}.conn span{font-size:12.5px;color:var(--muted)}
+.tag{display:inline-block;font-size:11px;font-weight:600;border-radius:20px;padding:1px 8px;margin-top:6px;background:var(--soft);color:var(--navy)}
+.mac,.win{display:none}body.is-mac .mac,body.is-win .win{display:block}body.is-mac span.mac,body.is-win span.win{display:inline}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:8px 0}
+summary{cursor:pointer;font-weight:600}details p,details li{color:var(--muted);font-size:14px}
+footer{border-top:1px solid var(--line);margin:40px 0 0;padding:18px 0 40px;font-size:12.5px;color:var(--muted)}
+@media(max-width:560px){.step{grid-template-columns:1fr}.check{width:28px;height:28px}}
+</style>
+</head>
+<body class="is-win">
+<header><div class="top"><div class="logo">Syncoria <b>/</b> Claude Workspace</div>
+<div class="os" role="group" aria-label="Your computer"><button data-os="win" aria-pressed="true">Windows</button><button data-os="mac" aria-pressed="false">Mac</button></div></div></header>
+
+<main class="wrap">
+<section class="hero">
+<h1>Set up Claude in about 10 minutes</h1>
+<p class="lead">Follow the steps in order. Tick each one as you go; this page remembers your progress. No terminal, no Git commands, no admin passwords.</p>
+<div class="progress"><div class="bar"><i id="bar"></i></div><span id="count">0 of 0 done</span></div>
+</section>
+
+<h2>Part 1 · Get Claude running</h2>
+
+<div class="step" data-id="install"><button class="check" aria-label="Mark done">1</button><div>
+<h3>Install Claude Desktop</h3>
+<p>Already installed? Tick this and move on.</p>
+<a class="btn" href="https://claude.com/download" target="_blank" rel="noopener">Download Claude Desktop ↗</a>
+<p class="win">Run the installer. When it opens, <b>don't sign in</b> yet. Just quit Claude (right-click the tray icon near the clock → Quit).</p>
+<p class="mac">Drag Claude into Applications. If it opens, <b>don't sign in</b> yet. Quit it with <kbd>⌘ Q</kbd>.</p>
+</div></div>
+
+<div class="step" data-id="settings"><button class="check" aria-label="Mark done">2</button><div>
+<h3>Apply the Syncoria settings</h3>
+<div class="win">
+<a class="btn teal" href="./setup.reg" download="Syncoria-Claude-Settings.reg">Download Syncoria settings (Windows) ↓</a>
+<ol><li>Open the downloaded <span class="path">Syncoria-Claude-Settings.reg</span> file.</li>
+<li>Click <b>Yes</b> on the Windows prompts, then <b>OK</b>.</li></ol>
+<div class="tip">Had the old setup from earlier this year? Run this file anyway. It replaces the retired settings address.</div>
+</div>
+<div class="mac">
+<a class="btn teal" href="./syncoria-claude.mobileconfig" download="Syncoria-Claude.mobileconfig">Download Syncoria settings (Mac) ↓</a>
+<ol><li>Open the downloaded file. macOS says a profile was downloaded.</li>
+<li>Open <b>System Settings → General → Device Management</b> (on older macOS: <b>Privacy &amp; Security → Profiles</b>).</li>
+<li>Double-click <b>Syncoria Workspace for Claude</b>, click <b>Install</b>, and enter your Mac password.</li></ol>
+</div>
+</div></div>
+
+<div class="step" data-id="signin"><button class="check" aria-label="Mark done">3</button><div>
+<h3>Open Claude and sign in with your Syncoria AWS account</h3>
+<ol>
+<li>Open Claude. If it asks <b>"Apply settings from your organization?"</b>, click <b>Allow</b>.</li>
+<li>Click <b>Sign in</b>. Your browser opens the Syncoria AWS sign-in page. Sign in with your work account, then click <b>Allow</b>.</li>
+<li>Switch back to Claude. You'll see <b>Syncoria Workspace</b> at the top.</li>
+</ol>
+<a class="btn ghost" href="https://d-9d674bb3b9.awsapps.com/start" target="_blank" rel="noopener">Test my AWS sign-in ↗</a>
+<div class="tip warn">If you click <b>Quit</b> on the "Apply settings" box, Claude closes. Just open it again and click <b>Allow</b>.</div>
+</div></div>
+
+<div class="step" data-id="skills"><button class="check" aria-label="Mark done">4</button><div>
+<h3>Check that the Syncoria skills arrived</h3>
+<p>The skills install by themselves within a few minutes of your first sign-in, and they update by themselves too.</p>
+<ol><li>In Claude, open <b>Customize → Plugins</b>.</li>
+<li>Under <b>Organization → syncoria-org</b>, you should see <b>syncoria-skills</b> marked installed.</li></ol>
+<div class="tip">Not there yet? Quit Claude fully and reopen it. If it's still missing after that, see <a href="#help">Help</a>.</div>
+</div></div>
+
+<h2>Part 2 · Connect your accounts</h2>
+
+<div class="step" data-id="connectors"><button class="check" aria-label="Mark done">5</button><div>
+<h3>Connect the tools you use</h3>
+<p>Each person signs in with <b>their own</b> account, so Claude only sees what you can see. Connect only the ones you need; skip the rest.</p>
+<ol><li>In Claude, open <b>Customize → Connectors</b>.</li>
+<li>Click <b>Connect</b> next to a tool. Your browser opens. Sign in with your <b>work</b> account and approve.</li>
+<li>Back in Claude, the tool shows as connected.</li></ol>
+<div class="grid">
+<div class="conn"><b>Google Drive</b><span>Find and read files</span><br><span class="tag">Everyone</span></div>
+<div class="conn"><b>Google Docs</b><span>Read and write docs</span><br><span class="tag">Everyone</span></div>
+<div class="conn"><b>Google Sheets</b><span>Analyse and update sheets</span><br><span class="tag">Everyone</span></div>
+<div class="conn"><b>Google Slides</b><span>Build and edit decks</span><br><span class="tag">Everyone</span></div>
+<div class="conn"><b>Gmail</b><span>Search and draft email</span><br><span class="tag">Everyone</span></div>
+<div class="conn"><b>Google Calendar</b><span>Check and plan meetings</span><br><span class="tag">Everyone</span></div>
+<div class="conn"><b>Miro</b><span>Boards and diagrams</span><br><span class="tag">If you use Miro</span></div>
+<div class="conn"><b>Figma</b><span>Design files</span><br><span class="tag">If you use Figma</span></div>
+<div class="conn"><b>AWS</b><span>AWS docs and resources</span><br><span class="tag">Technical staff</span></div>
+<div class="conn"><b>GitHub</b><span>Repos, issues, PRs</span><br><span class="tag">Coming soon</span></div>
+</div>
+<div class="tip">Claude asks before it changes, sends or deletes anything through a connector.</div>
+</div></div>
+
+<h2>Part 3 · Bring your claude.ai history</h2>
+
+<div class="step" data-id="import"><button class="check" aria-label="Mark done">6</button><div>
+<h3>Import your conversations and projects</h3>
+<ol><li>In Claude, open <b>Settings → Import &amp; export</b> and click <b>Import…</b></li>
+<li>Click <b>Sign in to claude.ai…</b>, sign in in your browser, and click <b>Authorize</b>.</li>
+<li>Back in Claude, click <b>Fetch export</b>, then <b>Continue</b>.</li>
+<li>On <b>Cowork &amp; Code</b>, click <b>Continue</b> (or <b>Skip this step</b>).</li>
+<li>Click <b>Import</b>. Your chats show in the sidebar, and your projects show as <b>Spaces</b>.</li></ol>
+<div class="tip">Want your uploaded files too? Use the file route instead: on claude.ai go to <b>Settings → Privacy → Export data</b>, download the zip from the email (the link lasts 24 hours), then choose <b>Choose file…</b> in step 2. Running the import again later won't create duplicates.</div>
+<a class="btn ghost" href="https://claude.ai/settings/data-privacy-controls" target="_blank" rel="noopener">Open claude.ai export settings ↗</a>
+</div></div>
+
+<h2>Part 4 · Plugins, marketplaces and extras</h2>
+
+<div class="step" data-id="plugins"><button class="check" aria-label="Mark done">7</button><div>
+<h3>Browse plugins</h3>
+<ol><li>Open <b>Customize → Plugins → Discover</b>.</li>
+<li><b>Organization</b> lists Syncoria's plugins. The other tabs list Anthropic's official marketplaces.</li>
+<li>Click a plugin, then <b>Install</b>. You can also add a marketplace of your own here.</li></ol>
+<div class="tip win">Anthropic's marketplaces need <b>Git for Windows</b> on your computer. If they show an error, install it with the default options, then restart Claude. <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">Get Git for Windows ↗</a></div>
+<div class="tip mac">Anthropic's marketplaces need Git. If they show an error, macOS offers to install the "command line developer tools". Accept, then restart Claude.</div>
+</div></div>
+
+<div class="step" data-id="browser"><button class="check" aria-label="Mark done">8</button><div>
+<h3>Let Claude browse websites</h3>
+<p>The built-in browser is already on. Just ask, for example: <i>"Open our Odoo pricing page and summarise what changed."</i> Claude opens the site in its own browser window, and you can watch or take over.</p>
+</div></div>
+
+<div class="step" data-id="tech"><button class="check" aria-label="Mark done">9</button><div>
+<h3>Technical extras <span style="font-weight:500;color:var(--muted)">(optional)</span></h3>
+<ul>
+<li><b>Playwright browser automation:</b> install <a href="https://nodejs.org/en/download" target="_blank" rel="noopener">Node.js LTS</a>, then install <b>syncoria-dev-connectors</b> from <b>Customize → Plugins → Organization</b>.</li>
+<li><b>Your own local MCP servers:</b> <b>Settings → Developer → Edit config</b>.</li>
+<li><b>Claude Code:</b> the <b>Code</b> tab is on for anyone who wants it.</li>
 </ul>
-<p class="small">Syncoria skills are packaged on every GitHub push. To make them appear automatically on a computer, the package must also be installed via a supported plugin mechanism. A GitHub Pages configuration URL alone does not install them.</p>
-</aside></div>
-<details><summary>Administrator settings and migration</summary><p class="small">The public bootstrap is a version-controlled JSON file. Only authorized GitHub contributors can change it. Publishing is done through GitHub Actions; there is no shared admin password on this website.</p><p><a href="./admin.html">Open the Settings guide ↗</a> · <a href="./bootstrap.json" target="_blank">View current JSON ↗</a> · <a href="https://github.com/syncoria/syncoria-skills/actions" target="_blank">Deployment history ↗</a></p><p class="small"><strong>Migration:</strong> Every existing PC still pointing to the AWS Lambda URL must apply the new .reg file once before the old Lambda is decommissioned.</p></details>
-<footer>Syncoria Engineering · GitHub Pages · <a href="https://claude.com/docs/third-party/claude-desktop/configuration" rel="noopener" target="_blank">Claude Desktop configuration documentation</a></footer>
-</main></body></html>
+</div></div>
+
+<h2 id="help">Help</h2>
+<details><summary>Claude still shows the normal claude.ai sign-in</summary>
+<p>The settings didn't apply. Run Step 2 again, then quit Claude completely and reopen it. <span class="win">On Windows, quit from the tray icon, because closing the window isn't enough.</span> If your PC also has company settings applied by IT for all users, the per-user file is ignored. Contact the Claude admin.</p></details>
+<details><summary>"Couldn't load your organization's configuration"</summary>
+<p>Check that you're online and can open <a href="./bootstrap.json" target="_blank">this settings file</a>. If it loads, restart Claude.</p></details>
+<details><summary>AWS sign-in fails or says I don't have access</summary>
+<p>Your account needs the <b>ClaudeCodeDeveloper</b> access in AWS. Open the <a href="https://d-9d674bb3b9.awsapps.com/start" target="_blank" rel="noopener">AWS sign-in page</a>. If you don't see the Syncoria account there, ask the Claude admin to add you.</p></details>
+<details><summary>A connector says "error" or "access blocked"</summary>
+<p>Click <b>Disconnect</b>, then <b>Connect</b> again with your work account. Google connectors need your account to be inside the Syncoria Google Workspace. If it keeps failing, send the connector's name and a screenshot to the Claude admin.</p></details>
+<details><summary>Import says export isn't allowed</summary>
+<p>Your claude.ai workspace owner must turn on <b>Settings → Organization → Data and privacy → Allow members to export their own data</b> on claude.ai.</p></details>
+
+<footer>
+Syncoria · Claude Desktop on AWS Bedrock (ca-central-1) · Settings update automatically; you never need to re-run Step 2 for changes.<br>
+Admins: <a href="./bootstrap.json" target="_blank">current configuration</a> · <a href="./plugins/marketplace.json" target="_blank">skills marketplace</a> · <a href="./admin.html">admin guide</a> · <a href="https://github.com/syncoria/syncoria-skills/actions/workflows/claude-pages.yml" target="_blank" rel="noopener">deploy history</a>
+</footer>
+</main>
+
+<script>
+(function(){
+  var KEY='syncoria-claude-setup-v2', state={};
+  try{state=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+  var steps=[].slice.call(document.querySelectorAll('.step'));
+  function render(){
+    var n=0;
+    steps.forEach(function(s,i){var d=!!state[s.dataset.id];s.classList.toggle('done',d);
+      var b=s.querySelector('.check');b.textContent=d?'✓':String(i+1);b.setAttribute('aria-pressed',d);if(d)n++;});
+    document.getElementById('count').textContent=n+' of '+steps.length+' done';
+    document.getElementById('bar').style.width=(100*n/steps.length)+'%';
+  }
+  steps.forEach(function(s){s.querySelector('.check').addEventListener('click',function(){state[s.dataset.id]=!state[s.dataset.id];save();render();});});
+  function setOS(os){document.body.className='is-'+os;
+    [].forEach.call(document.querySelectorAll('.os button'),function(b){b.setAttribute('aria-pressed',b.dataset.os===os)});
+    try{localStorage.setItem(KEY+'-os',os)}catch(e){}}
+  [].forEach.call(document.querySelectorAll('.os button'),function(b){b.addEventListener('click',function(){setOS(b.dataset.os)})});
+  var saved=null;try{saved=localStorage.getItem(KEY+'-os')}catch(e){}
+  setOS(saved||(/Mac/i.test(navigator.platform||navigator.userAgent)?'mac':'win'));
+  render();
+})();
+</script>
+</body>
+</html>
