@@ -2,6 +2,9 @@ name: Publish Claude Organization Skills
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'docs/**'
+      - '.github/workflows/claude-pages.yml'
   workflow_dispatch:
 
 permissions:
