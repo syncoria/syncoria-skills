@@ -1,0 +1,29 @@
+{
+  "name": "syncoria-skills",
+  "displayName": "Syncoria Engineering Skills",
+  "description": "Shared Syncoria development, Odoo, design, technical review, and engineering process skills",
+  "version": "1.0.0",
+  "author": {
+    "name": "Syncoria"
+  },
+  "skills": [
+    "./cowork-plugin-management_cowork-plugin-customizer",
+    "./cowork-plugin-management_create-cowork-plugin",
+    "./meeting-decisions",
+    "./odoo-git",
+    "./odoo-guidelines",
+    "./odoo-review",
+    "./odoo-security",
+    "./odoo-web-guidelines",
+    "./syncoria-aidlc-method",
+    "./syncoria-customization-review",
+    "./syncoria-designer",
+    "./syncoria-discovery-extraction",
+    "./syncoria-estimation",
+    "./syncoria-industry-manufacturing",
+    "./syncoria-odoo",
+    "./technical-odoo-readme",
+    "./technical-odoo-review",
+    "./technical-odoo-unit-tests"
+  ]
+}
