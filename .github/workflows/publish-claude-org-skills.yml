@@ -1,0 +1,54 @@
+name: Publish Claude Organization Skills
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: syncoria-claude-skills-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out Syncoria skills
+        uses: actions/checkout@v4
+
+      - name: Build verified organization plugin archive
+        run: python3 scripts/build_claude_org_plugin.py
+
+      - name: Get short-lived AWS credentials through OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::537124957474:role/SyncoriaClaudePluginPublisher
+          aws-region: ca-central-1
+          role-session-name: syncoria-claude-skills-publisher
+
+      - name: Publish release to private versioned bucket
+        shell: bash
+        env:
+          BUCKET: syncoria-claude-plugin-publisher-bucket-fnlszlpsxhad
+        run: |
+          set -euo pipefail
+          aws s3 cp dist/syncoria-skills.zip \
+            "s3://$BUCKET/releases/$GITHUB_SHA/syncoria-skills.zip" \
+            --content-type application/zip \
+            --cache-control "private,max-age=31536000,immutable"
+          aws s3 cp dist/latest.json "s3://$BUCKET/latest.json" \
+            --content-type application/json \
+            --cache-control no-store
+
+      - name: Keep release verification data in workflow artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: syncoria-claude-org-skills-verification
+          path: |
+            dist/syncoria-skills.zip.sha256
+            dist/latest.json
+          retention-days: 14
