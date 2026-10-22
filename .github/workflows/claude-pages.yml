@@ -1,0 +1,37 @@
+name: Publish Claude Onboarding to GitHub Pages
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - '.github/workflows/claude-pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: syncoria-claude-pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify Bedrock bootstrap and required SSO fields
+        run: python3 docs/validate.py
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload public site files
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: docs
+      - name: Publish
+        id: deploy
+        uses: actions/deploy-pages@v4
