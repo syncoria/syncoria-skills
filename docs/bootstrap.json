@@ -1,71 +1,73 @@
 {
   "inferenceProvider": "bedrock",
   "inferenceBedrockRegion": "ca-central-1",
+  "inferenceCredentialKind": "interactive",
+  "inferenceBedrockSsoStartUrl": "https://d-9d674bb3b9.awsapps.com/start",
+  "inferenceBedrockSsoRegion": "ca-central-1",
+  "inferenceBedrockSsoAccountId": "537124957474",
+  "inferenceBedrockSsoRoleName": "ClaudeCodeDeveloper",
   "inferenceModels": [
     {
       "name": "us.anthropic.claude-sonnet-5-5",
-      "labelOverride": "Claude Sonnet 5.5 ? Bedrock",
+      "labelOverride": "Claude Sonnet 5.5 · Bedrock",
       "anthropicFamilyTier": "sonnet",
       "isFamilyDefault": true
     },
     {
       "name": "us.anthropic.claude-opus-5-5",
-      "labelOverride": "Claude Opus 5.5 ? Bedrock",
+      "labelOverride": "Claude Opus 5.5 · Bedrock",
       "anthropicFamilyTier": "opus",
       "isFamilyDefault": true
     },
     {
       "name": "us.anthropic.claude-haiku-5-5",
-      "labelOverride": "Claude Haiku 5.5 ? Bedrock",
+      "labelOverride": "Claude Haiku 5.5 · Bedrock",
       "anthropicFamilyTier": "haiku",
       "isFamilyDefault": true
     }
   ],
+
+  "deploymentDisplayName": "Syncoria Workspace",
+  "deploymentDisplaySubtitle": "AWS Bedrock",
+  "disableDeploymentModeChooser": true,
   "desktopHome": "standard",
-  "isClaudeCodeForDesktopEnabled": false,
+  "chatTabEnabled": true,
+  "chatAdvancedFileAnalysisEnabled": true,
+  "coworkTabEnabled": true,
+  "isClaudeCodeForDesktopEnabled": true,
+  "developerModeEnabled": true,
+  "scheduledTasksEnabled": true,
+  "toolSearchEnabled": true,
+  "sessionRetentionHold": true,
+  "disableBypassPermissionsMode": true,
+
   "builtinBrowserEnabled": true,
   "builtinBrowserDefaultDomainPolicy": "allow",
+  "coworkEgressAllowedHosts": ["*"],
+
+  "claudeAiImport": {
+    "enabled": true,
+    "automatic3pImport": true,
+    "exportEnabled": true,
+    "bannerBehavior": "detect"
+  },
+
+  "skillCreationEnabled": true,
+  "userPluginMarketplacesEnabled": true,
+  "userPluginUploadsEnabled": true,
+  "isLocalDevMcpEnabled": true,
+  "isDesktopExtensionEnabled": true,
   "mcpPersistentAlwaysAllowEnabled": false,
-  "isLocalDevMcpEnabled": false,
-  "managedMcpServers": [
-    {
-      "name": "Google Drive",
-      "transport": "http",
-      "url": "https://drivemcp.googleapis.com/mcp/v1",
-      "oauth": {},
-      "toolPolicy": {
-        "*": "ask"
-      }
-    },
-    {
-      "name": "Google Docs",
-      "transport": "http",
-      "url": "https://docsmcp.googleapis.com/mcp/v1",
-      "oauth": {},
-      "toolPolicy": {
-        "*": "ask"
-      }
-    },
-    {
-      "name": "Google Sheets",
-      "transport": "http",
-      "url": "https://sheetsmcp.googleapis.com/mcp/v1",
-      "oauth": {},
-      "toolPolicy": {
-        "*": "ask"
-      }
-    },
-    {
-      "name": "Google Slides",
-      "transport": "http",
-      "url": "https://slidesmcp.googleapis.com/mcp/v1",
-      "oauth": {},
-      "toolPolicy": {
-        "*": "ask"
-      }
-    }
-  ],
+  "disabledBuiltinTools": [],
+
   "allowedPluginMarketplaces": [
+    {
+      "source": "url",
+      "url": "https://syncoria.github.io/syncoria-skills/plugins/marketplace.json",
+      "expectedName": "syncoria-org",
+      "credentialKind": "anonymous",
+      "installationPreference": "available"
+    },
     {
       "source": "github",
       "repo": "anthropics/claude-plugins-official",
@@ -77,31 +79,18 @@
       "installationPreference": "available"
     }
   ],
-  "coworkEgressAllowedHosts": [
-    "*"
+
+  "managedMcpServers": [
+    { "name": "Google Drive",    "transport": "http", "url": "https://drivemcp.googleapis.com/mcp/v1",    "oauth": {}, "toolPolicy": { "*": "ask" } },
+    { "name": "Google Docs",     "transport": "http", "url": "https://docsmcp.googleapis.com/mcp/v1",     "oauth": {}, "toolPolicy": { "*": "ask" } },
+    { "name": "Google Sheets",   "transport": "http", "url": "https://sheetsmcp.googleapis.com/mcp/v1",   "oauth": {}, "toolPolicy": { "*": "ask" } },
+    { "name": "Google Slides",   "transport": "http", "url": "https://slidesmcp.googleapis.com/mcp/v1",   "oauth": {}, "toolPolicy": { "*": "ask" } },
+    { "name": "Gmail",           "transport": "http", "url": "https://gmailmcp.googleapis.com/mcp/v1",    "oauth": {}, "toolPolicy": { "*": "ask" } },
+    { "name": "Google Calendar", "transport": "http", "url": "https://calendarmcp.googleapis.com/mcp/v1", "oauth": {}, "toolPolicy": { "*": "ask" } },
+    { "name": "AWS",   "transport": "http", "url": "https://aws-mcp.us-east-1.api.aws/mcp?oauth=initialize", "oauth": true },
+    { "name": "Miro",  "transport": "http", "url": "https://mcp.miro.com/",        "oauth": true },
+    { "name": "Figma", "transport": "http", "url": "https://mcp.figma.com/mcp",    "oauth": true }
   ],
-  "inferenceCredentialKind": "interactive",
-  "inferenceBedrockSsoStartUrl": "https://d-9d674bb3b9.awsapps.com/start",
-  "inferenceBedrockSsoRegion": "ca-central-1",
-  "inferenceBedrockSsoAccountId": "537124957474",
-  "inferenceBedrockSsoRoleName": "ClaudeCodeDeveloper",
-  "disableDeploymentModeChooser": true,
-  "sessionRetentionHold": true,
-  "claudeAiImport": {
-    "enabled": true,
-    "automatic3pImport": true,
-    "exportEnabled": true,
-    "bannerBehavior": "detect"
-  },
-  "toolSearchEnabled": true,
-  "disabledBuiltinTools": [],
-  "skillCreationEnabled": true,
-  "userPluginMarketplacesEnabled": true,
-  "userPluginUploadsEnabled": true,
-  "deploymentDisplayName": "Syncoria Workspace",
-  "deploymentDisplaySubtitle": "Business · AWS Bedrock",
-  "coworkTabEnabled": true,
-  "developerModeEnabled": false,
-  "disableBypassPermissionsMode": true,
-  "organizationInstructions": "You are the Syncoria Business Workspace assistant. Prioritize business documents, finance, operations, Odoo functional workflows, and Google Workspace collaboration. Do not assume you can access GitHub or developer tools. Use approved organization skills when installed. Never claim Google document changes were saved without connector confirmation."
+
+  "organizationInstructions": "You are the Syncoria Workspace assistant, serving business and technical staff. Use the Syncoria organization skills whenever a task matches them. Use connectors only through the user's own signed-in accounts, and never claim a change to a Google, GitHub, AWS, Miro or Figma resource was saved without the connector confirming it. Ask before any action that sends, publishes, deletes or changes shared resources."
 }
