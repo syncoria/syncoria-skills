@@ -1,0 +1,14 @@
+{
+  "name": "syncoria-engineering",
+  "description": "Internal Syncoria engineering skills and development workflows",
+  "owner": {
+    "name": "Syncoria Engineering"
+  },
+  "plugins": [
+    {
+      "name": "syncoria-skills",
+      "source": "./",
+      "description": "Syncoria's 18 shared Odoo, engineering and software delivery skills"
+    }
+  ]
+}
