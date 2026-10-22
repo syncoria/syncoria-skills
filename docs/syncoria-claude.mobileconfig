@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>PayloadContent</key>
+  <array>
+    <dict>
+      <key>PayloadType</key><string>com.anthropic.claudefordesktop</string>
+      <key>PayloadIdentifier</key><string>com.syncoria.claude.settings</string>
+      <key>PayloadUUID</key><string>059A2059-2E9F-58DE-ABBA-7820700762F7</string>
+      <key>PayloadVersion</key><integer>1</integer>
+      <key>PayloadDisplayName</key><string>Claude Desktop settings</string>
+      <key>bootstrapEnabled</key><true/>
+      <key>bootstrapUrl</key><string>https://syncoria.github.io/syncoria-skills/bootstrap.json</string>
+      <key>bootstrapHeaders</key><string>{"X-Syncoria-Client":"claude-desktop"}</string>
+      <key>disableDeploymentModeChooser</key><true/>
+    </dict>
+  </array>
+  <key>PayloadDisplayName</key><string>Syncoria Workspace for Claude</string>
+  <key>PayloadDescription</key><string>Points Claude Desktop at the Syncoria company configuration (AWS Bedrock, connectors, skills).</string>
+  <key>PayloadOrganization</key><string>Syncoria</string>
+  <key>PayloadIdentifier</key><string>com.syncoria.claude</string>
+  <key>PayloadUUID</key><string>D4E7D462-DE6A-5A0D-B9BE-F97CDD2E9269</string>
+  <key>PayloadType</key><string>Configuration</string>
+  <key>PayloadScope</key><string>System</string>
+  <key>PayloadVersion</key><integer>1</integer>
+</dict>
+</plist>
